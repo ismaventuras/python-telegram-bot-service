@@ -1,0 +1,13 @@
+[Unit]
+Description=Sample Python System Service
+
+[Service]
+WorkingDirectory=/usr/local/lib/bot/
+Environment=PYTHONUNBUFFERED=1
+EnvironmentFile=/usr/local/etc/bot/bot.env
+ExecStart=/usr/local/lib/bot/venv/bin/python3 /usr/local/lib/bot/bot.py
+
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
